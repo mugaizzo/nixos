@@ -37,7 +37,7 @@
   ];
 
   imports = [ 
-  ../../modules/home-manager/i3wm.nix
+ # ../../modules/home-manager/i3wm.nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

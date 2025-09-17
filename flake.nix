@@ -3,28 +3,36 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+          url = "github:nix-community/home-manager";
+          inputs.nixpkgs.follows = "nixpkgs";
+	  };
+    nvf = {
+      url = "github:notashelf/nvf";
+    };
+
   };
 
   outputs =
     inputs@{ nixpkgs, home-manager, ... }:
-    {
-      nixosConfigurations = {
-        "nixos" = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            hosts/default/configuration.nix
-	    home-manager.nixosModules.home-manager
-	    {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.users.mugahed = hosts/default/home.nix;
-	    home-manager.backupFileExtension = "backup";
-
-	    }
-          ];
+    let
+    hostname = "nixos";
+    username = "user";
+  in {
+    nixosConfigurations = {
+      thinkpad = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+          inherit hostname;
+          profile = "thinkpad";
+          inherit username;
+          inherit home-manager;
         };
+        modules = [
+          ./profiles/thinkpad
+        ];
+      };
       };
     };
 }
