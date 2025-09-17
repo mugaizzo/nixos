@@ -41,7 +41,7 @@ home-manager = {
     packages = with pkgs; [
     #  thunderbird
     firefox
-neovim
+
 btop
 vscode
 git

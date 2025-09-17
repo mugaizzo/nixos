@@ -17,7 +17,7 @@
     inputs@{ nixpkgs, home-manager, ... }:
     let
     hostname = "nixos";
-    username = "user";
+    username = "mugahed";
   in {
     nixosConfigurations = {
       thinkpad = nixpkgs.lib.nixosSystem {
