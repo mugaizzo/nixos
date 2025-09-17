@@ -23,6 +23,9 @@
       fd
       # Latex support for render-markdown
       python312Packages.pylatexenc
+      aljandra
+      statix
+     
     ];
 
 programs.nvf = {
