@@ -6,6 +6,7 @@ _: {
 #    ./hyprland
 #    ./music
     ./terminal
+    ./i3
   ];
 }
 
