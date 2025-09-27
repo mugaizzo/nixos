@@ -17,14 +17,14 @@
 
   config = lib.mkIf config.terminal.nvim.enable {
     home.packages = with pkgs; [
+      alejandra   
+      statix
       # Required for treesitter
       gcc
       # Required for telescope
       fd
       # Latex support for render-markdown
       python312Packages.pylatexenc
-      aljandra
-      statix
      
     ];
 

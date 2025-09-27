@@ -15,6 +15,10 @@
       package = pkgs.i3-gaps;
       config = {
         modifier = "Mod4";
+        fonts = {
+          names = ["Noto Kufi Arabic"];
+          size = 9;
+        };
         gaps = {
           inner = 10;
           outer = 5;
@@ -23,5 +27,4 @@
       };
     };
   };
-
 }

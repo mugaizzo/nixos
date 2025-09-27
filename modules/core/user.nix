@@ -51,6 +51,7 @@ yazi
 lazygit
 racket 
 slack
+kdePackages.konsole
     ];
   };
 }
