@@ -17,7 +17,7 @@
         modifier = "Mod4";
         fonts = {
           names = ["Noto Kufi Arabic"];
-          size = 9;
+          size = 9.0;
         };
         gaps = {
           inner = 10;
