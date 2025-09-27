@@ -33,7 +33,7 @@
         };
 
         # Floating window mmodifier
-        floating.modifier = "Mod3";
+        floating.modifier = "Mod4";
 
         # Allow window dragging
         focus.followMouse = true;
@@ -43,7 +43,7 @@
 
         # Custom keybindings
         keybindings = let
-          modifier = config.xsession.windowManager.i3.config.modifier;
+          inherit (config.xsession.windowManager.i3.config) modifier;
         in {
           # Kill focused window
           "${modifier}+q" = "kill";
