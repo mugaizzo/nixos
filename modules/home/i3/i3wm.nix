@@ -43,7 +43,7 @@
 
         # Custom keybindings
         keybindings = let
-          modifier = config.xsession.windowManager.i3.config.mmodifier;
+          modifier = config.xsession.windowManager.i3.config.modifier;
         in {
           # Kill focused window
           "${modifier}+q" = "kill";
