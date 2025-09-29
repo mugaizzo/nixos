@@ -1,12 +1,13 @@
 _: {
   imports = [
-#    ./scripts
+    ./scripts
 #    ./games
 #    ./gui
 #    ./hyprland
 #    ./music
     ./terminal
     ./i3
+    ./polybar
   ];
 }
 

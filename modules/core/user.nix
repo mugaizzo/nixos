@@ -60,6 +60,13 @@
       # dex
       emote
       xbindkeys
+      rofi
+      jq
+      feh 
+      autorandr
+
+      polybar
+      killall
     ];
   };
 }
