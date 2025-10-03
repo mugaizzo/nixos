@@ -11,7 +11,7 @@ pkgs.writeShellScriptBin "update-system" ''
   fi
 
   if [ -z "$DOTFILES" ]; then
-    DOTFILES="$HOME/.config/nixos"
+    DOTFILES="$HOME/nixos"
   fi
 
   cd "$DOTFILES"

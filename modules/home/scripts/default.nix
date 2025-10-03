@@ -13,7 +13,7 @@
     # "keyboardBrightness.nix"
     # "musicMenu.nix"
     # "backup.nix"
-    # "update-system.nix"
+    "update-system.nix"
     "launch_polybar.nix"
     "bluetooth_menu.nix"
     "wifi_menu.nix"

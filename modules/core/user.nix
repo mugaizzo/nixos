@@ -51,22 +51,28 @@
       racket
       slack
       kdePackages.konsole
+      zoom-us
 
       brightnessctl
       playerctl
       flameshot
       i3lock
-      # xss-lock
-      # dex
       emote
       xbindkeys
       rofi
       jq
-      feh 
+      feh
       autorandr
+      bc
 
+      picom
+      dex
+      xss-lock
       polybar
       killall
+      openvpn
+
+      oranchelo-icon-theme
     ];
   };
 }

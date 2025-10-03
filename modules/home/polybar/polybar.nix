@@ -40,12 +40,13 @@
         module-margin = 1;
 
         font = [
-          "MartianMono NF:10;1"
-          "Noto Kufi Arabic:10;1"
+          "GoMonoNerdFont:10;1"
+          #  "Noto Kufi Arabic:10;1"
         ];
 
         modules-left = "xworkspaces xwindow";
-        modules-right = "pulseaudio memory cpu wlan eth bluetooth battery xkeyboard date tray power";
+        modules-center = "date";
+        modules-right = "pulseaudio wlan eth bluetooth battery xkeyboard tray power";
 
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";
@@ -86,7 +87,7 @@
       "module/pulseaudio" = {
         type = "internal/pulseaudio";
 
-        format-volume-prefix = "󰕾 ";
+        format-volume-prefix = "󰕾";
         format-volume-prefix-foreground = "\${colors.primary}";
         format-volume = "<label-volume>";
 
@@ -119,7 +120,7 @@
       "module/wlan" = {
         "inherit" = "network-base";
         interface-type = "wireless";
-        label-connected = "%{F#33CCFF}%{A1:rofi-wifi &:} %{F-}%essid%%{A}";
+        label-connected = "%{F#33CCFF}%{A1:rofi-wifi &:} %{F-}%essid%%{A}";
         label-disconnected = "%{A1:rofi-wifi &:}󰖪 %{A}";
         click-left = "rofi-wifi &";
       };
@@ -128,7 +129,7 @@
         "inherit" = "network-base";
         interface-type = "wired";
         label-connected = "%{F#33CCFF}󰈀 %{F-}";
-        label-disconnected = "%{F#707880}  ";
+        label-disconnected = "%{F#707880} ";
       };
 
       "module/battery" = {
@@ -138,15 +139,17 @@
         empty-text = "Empty";
         format-charging = "<label-charging>";
         format-discharging = "<label-discharging>";
-        format-full = "%{F#00FF00}󰁹 %100";
-        label-discharging = "%{F#FF0000}󰂀 %percentage%%";
-        label-charging = "%{F#2E9FFF}󰂀 %percentage%%";
+        format-full = "%{F#00FF00}󰁹%100";
+        label-discharging = "%{F#FF0000}󰂀%percentage%%";
+        label-charging = "%{F#2E9FFF}󰂀%percentage%%";
       };
 
       "module/date" = {
         type = "internal/date";
         interval = 1;
-        date = "󱑌 %I:%M%p";
+        date = "%I:%M%p";
+        date-alt = "%b %d %H:%M";
+
         label = "%date%";
         label-foreground = "\${colors.primary}";
       };

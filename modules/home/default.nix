@@ -8,6 +8,8 @@ _: {
     ./terminal
     ./i3
     ./polybar
+    ./rofi
+    ./picom
   ];
 }
 

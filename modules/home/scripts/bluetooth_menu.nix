@@ -196,7 +196,7 @@ print_status() {
         mapfile -t paired_devices < <(bluetoothctl $paired_devices_cmd | grep Device | cut -d ' ' -f 2)
         counter=0
 
-        for device in "$\{paired_devices[@]}"; do
+        for device in "''${paired_devices[@]}"; do
             if device_connected "$device"; then
                 device_alias=$(bluetoothctl info "$device" | grep "Alias" | cut -d ' ' -f 2-)
 
