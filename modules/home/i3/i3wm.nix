@@ -138,6 +138,7 @@
           "${modifier}+g" = "move workspace to output right";
           "${modifier}+o" = "exec --no-startup-id flameshot gui";
           "${modifier}+b" = "exec --no-startup-id firefox";
+          "${modifier}+Tab" = "exec --no-startup-id wallpaper-changer";
         };
 
         # Resize mode definition
@@ -191,6 +192,10 @@
           }
           {
             command = "launch_polybar";
+            notification = false;
+          }
+          {
+            command = "wallpaper-changer";
             notification = false;
           }
           # { command = "${config.home.homeDirectory}/.config/i3/run_xbindkeys.sh"; always = true; notification = false; }
