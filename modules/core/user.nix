@@ -64,6 +64,7 @@
       feh
       autorandr
       bc
+      arandr  
 
       picom
       dex
