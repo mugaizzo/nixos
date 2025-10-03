@@ -46,7 +46,7 @@
 
         modules-left = "xworkspaces xwindow";
         modules-center = "date";
-        modules-right = "pulseaudio wlan eth bluetooth battery xkeyboard tray power";
+        modules-right = "volume wlan eth bluetooth battery xkeyboard tray power";
 
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";
@@ -85,6 +85,14 @@
       };
 
       "module/volume" = {
+        type = "internal/pulseaudio";
+        format.volume = " ";
+        label.muted.text = "🔇";
+        label.muted.foreground = "#666";
+        ramp.volume = ["🔈" "🔉" "🔊"];
+        click.right = "pavucontrol &";
+      };
+      "module/pulseaudio" = {
         type = "internal/pulseaudio";
 
         format-volume-prefix = "󰕾";
