@@ -84,7 +84,7 @@
         label = "%title:0:25:...%";
       };
 
-      "module/pulseaudio" = {
+      "module/volume" = {
         type = "internal/pulseaudio";
 
         format-volume-prefix = "󰕾";
