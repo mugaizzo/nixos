@@ -71,7 +71,7 @@
       polybar
       killall
       openvpn
-
+      pwvucontrol
       oranchelo-icon-theme
     ];
   };
