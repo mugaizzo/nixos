@@ -1,5 +1,4 @@
 {username, ...}: {
-
   # Automount usb drives
   # systemd.tmpfiles.rules = [
   #   "d /run/media/${username} 0755 ${username} ${username} -"
@@ -13,11 +12,11 @@
     # tumbler.enable = true; # Image/Video preview
     # gnome.gnome-keyring.enable = true; # Store system credentials
     # smartd.enable = true; # Check disks health
-    # logind.settings.Login.HandleLidSwitch = "ignore"; # Ignore when the lid is closed -> Hypridle etc. handles suspending
     # thermald.enable = true; # Monitor CPU temperature
     # tlp.enable = true; # Power saving
     # jitterentropy-rngd.enable = true; # Better entropy
-    
+
+    logind.settings.Login.HandleLidSwitch = "ignore"; # Ignore when the lid is closed -> Hypridle etc. handles suspending
     # Enable audio
     pipewire = {
       enable = true;
