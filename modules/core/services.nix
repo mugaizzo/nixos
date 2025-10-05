@@ -16,7 +16,7 @@
     # tlp.enable = true; # Power saving
     # jitterentropy-rngd.enable = true; # Better entropy
 
-    logind.settings.Login.HandleLidSwitch = "ignore"; # Ignore when the lid is closed -> Hypridle etc. handles suspending
+    logind.HandleLidSwitch = "ignore"; # Ignore when the lid is closed -> Hypridle etc. handles suspending
     # Enable audio
     pipewire = {
       enable = true;
