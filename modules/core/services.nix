@@ -23,11 +23,11 @@
       signal = {
         enable = true;
         relayHosts = ["192.168.1.61"];
-        extraArgs = ["-k" "/home/mugahed/.ssh/id_ed25519_rustdesk"];
+        #        extraArgs = ["-k" "/home/mugahed/.ssh/id_ed25519_rustdesk"];
       };
       relay = {
         enable = true;
-        extraArgs = ["-k" "/home/mugahed/.ssh/id_ed25519_rustdesk"];
+        # extraArgs = ["-k" "/home/mugahed/.ssh/id_ed25519_rustdesk"];
       };
       openFirewall = true;
     };
