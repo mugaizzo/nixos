@@ -74,7 +74,7 @@
       openvpn
       pwvucontrol
       oranchelo-icon-theme
-      rustdesk
+      rustdesk-server
     ];
   };
 }
