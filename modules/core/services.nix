@@ -17,6 +17,15 @@
     # jitterentropy-rngd.enable = true; # Better entropy
 
     logind.settings.Login.HandleLidSwitch = "ignore"; # Ignore when the lid is closed -> Hypridle etc. handles suspending
+
+    rustdesk-server = {
+      enable = true;
+      signal.enable = true;
+      signal.relayHosts = ["192.168.1.61"];
+      relay.enable = true;
+      openFirewall = true;
+    };
+
     # Enable audio
     pipewire = {
       enable = true;
