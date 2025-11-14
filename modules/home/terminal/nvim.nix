@@ -48,7 +48,18 @@
         globals = {
           clipboard = "osc52";
           t_RV = "";
+          vimtex_view_method = "zathura";
+          vimtex_syntax_enabled = 0;
+          vimtex_quickfix_ignore_filters = [
+            "organization"
+            "publisher"
+            "address"
+          ];
         };
+
+
+        latex.vimtex.enable = true;
+
         clipboard = {
           enable = true;
           registers = "unnamedplus";
