@@ -113,11 +113,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1763102948,
-        "narHash": "sha256-l+MFNS4YxGorYAUeQtIsHmLf1cFXACpuJvQRnLbYn1Q=",
+        "lastModified": 1763106095,
+        "narHash": "sha256-4LzXxZ3PDmaWAijoTPbWqWCJPnItmQIyRljAA+TId4k=",
         "owner": "mugaizzo",
         "repo": "nvf",
-        "rev": "17e88f42257ce05b789329d87de61500637fb726",
+        "rev": "872f024d5bae772d49489d587e06c55903ce5245",
         "type": "github"
       },
       "original": {

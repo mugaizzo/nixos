@@ -78,6 +78,7 @@
       rustdesk-server
       zathura
       ripgrep
+      texliveFull
     ];
   };
 }
