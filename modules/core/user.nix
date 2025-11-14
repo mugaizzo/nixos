@@ -74,8 +74,10 @@
       openvpn
       pwvucontrol
       oranchelo-icon-theme
-      rustdesk-flutter
+      rustdesk
       rustdesk-server
+      zathura
+      ripgrep
     ];
   };
 }
