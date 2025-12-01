@@ -27,6 +27,10 @@
         username = "${username}";
         homeDirectory = "/home/${username}";
         stateVersion = "25.05"; # Do not change
+        sessionVariables = {
+          EDITOR = "nvim";
+          MANPAGER = "nvim -c 'Man! -'";
+        };
       };
     };
   };
@@ -64,7 +68,7 @@
       feh
       autorandr
       bc
-      arandr  
+      arandr
 
       picom
       dex
@@ -79,6 +83,8 @@
       zathura
       ripgrep
       texliveFull
+
+      zsh
     ];
   };
 }
