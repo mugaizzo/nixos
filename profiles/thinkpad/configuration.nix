@@ -87,8 +87,16 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.openssh.settings.X11Forwarding = true;
-  programs.ssh.forwardX11 = true;
+  programs = {
+    ssh.forwardX11 = true;
 
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    };
+  };
   home-manager.users.${username} = {
     i3 = {
       enable = true;
