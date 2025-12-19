@@ -24,6 +24,13 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true; # Enabled by default
+    allowedTCPPorts = [53 853 443]; # Open web ports
+    allowedUDPPortRanges = [               # Open a range
+      { from = 53; to = 53; }
+    ];
+  };
 
   # Enable the X11 windowing system.
   services = {
@@ -132,6 +139,7 @@
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
   };
+
   home-manager.users.${username} = {
     i3 = {
       enable = true;
