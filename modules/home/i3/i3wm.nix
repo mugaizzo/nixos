@@ -175,6 +175,14 @@
             notification = false;
           }
           {
+            command = "nm-applet";
+            notification = false;
+          }
+          {
+            command = "blueman-applet";
+            notification = false;
+          }
+          {
             command = "dex --autostart --environment i3";
             notification = false;
           }

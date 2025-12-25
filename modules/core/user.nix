@@ -69,6 +69,9 @@
       autorandr
       bc
       arandr
+      nil
+      blueman
+      networkmanagerapplet
 
       picom
       dex
