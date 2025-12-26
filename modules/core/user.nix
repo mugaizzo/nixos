@@ -81,8 +81,8 @@
       openvpn
       pwvucontrol
       oranchelo-icon-theme
-      rustdesk
-      rustdesk-server
+      # inputs.rustpkg.legacyPackages.${system}.rustdesk
+      # inputs.rustdeskServerpkg.legacyPackages.${system}.rustdesk-server
       zathura
       ripgrep
       texliveFull
