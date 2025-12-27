@@ -46,7 +46,8 @@
 
         modules-left = "xworkspaces xwindow";
         modules-center = "date";
-        modules-right = "volume wlan eth bluetooth battery xkeyboard tray power";
+        # modules-right = "volume wlan eth bluetooth battery xkeyboard tray power";
+        modules-right = "volume battery xkeyboard tray power";
 
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";

@@ -3,7 +3,19 @@
   inputs,
   username,
   ...
-}: {
+}: let
+  system = pkgs.system;
+  # Import the pinned nixpkgs with allowUnfree config
+  rustPinnedPkgs = import inputs.rustpkg {
+    inherit system;
+    config.allowUnfree = true;
+  };
+
+  rustdeskServerPinnedPkgs = import inputs. rustdeskServerpkg {
+    inherit system;
+    config. allowUnfree = true;
+  };
+in {
   imports = [inputs.home-manager.nixosModules.home-manager];
 
   # Allow unfree packages
@@ -81,8 +93,8 @@
       openvpn
       pwvucontrol
       oranchelo-icon-theme
-      # inputs.rustpkg.legacyPackages.${system}.rustdesk
-      # inputs.rustdeskServerpkg.legacyPackages.${system}.rustdesk-server
+      rustPinnedPkgs.rustdesk
+      rustdeskServerPinnedPkgs.rustdesk-server
       zathura
       ripgrep
       texliveFull
