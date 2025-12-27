@@ -11,10 +11,11 @@
     programs.git = {
       enable = true;
 
-
       settings = {
-        user.name = "mugaizzo";
-        user.email = "mugahedman@hotmail.com";
+        user = {
+          name = "mugaizzo";
+          email = "mugahedman@hotmail.com";
+        };
         extraConfig = {
           credential.helper = "store --file ~/.ssh/config";
         };
