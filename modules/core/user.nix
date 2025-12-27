@@ -4,7 +4,8 @@
   username,
   ...
 }: let
-  system = pkgs.system;
+  inherit (pkgs) system;
+
   # Import the pinned nixpkgs with allowUnfree config
   rustPinnedPkgs = import inputs.rustpkg {
     inherit system;
