@@ -15,21 +15,26 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
-  networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = true; # Enabled by default
-    allowedTCPPorts = [53 853 443]; # Open web ports
-    allowedUDPPortRanges = [               # Open a range
-      { from = 53; to = 53; }
-    ];
+  networking = {
+    hostName = "nixos"; # Define your hostname.
+    #  wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+    # Configure network proxy if necessary
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    networkmanager.enable = true;
+    firewall = {
+      enable = true; # Enabled by default
+      allowedTCPPorts = [53 853 443]; # Open web ports
+      allowedUDPPortRanges = [
+        # Open a range
+        {
+          from = 53;
+          to = 53;
+        }
+      ];
+    };
   };
 
   # Enable the X11 windowing system.
@@ -130,6 +135,7 @@
     };
   };
   programs = {
+    zsh.enable = true;
     ssh.forwardX11 = true;
 
     steam = {

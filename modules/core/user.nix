@@ -54,6 +54,7 @@ in {
     hashedPassword = "$6$JqPRec7d2TA8bzEr$hkeQvoM0qEdUPU4chLV5b.nDvTHk6ndJlib9DeFssVc.i3jnCDnoL6hSZ/z6sIuNRRinK/S6CFE1cWaD2BS/U.";
     description = "mugahed";
     extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       #  thunderbird
       firefox
@@ -99,8 +100,6 @@ in {
       zathura
       ripgrep
       texliveFull
-
-      zsh
     ];
   };
 }
