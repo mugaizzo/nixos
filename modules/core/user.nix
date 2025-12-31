@@ -83,7 +83,6 @@ in {
       autorandr
       bc
       arandr
-      nil
       blueman
       networkmanagerapplet
 
