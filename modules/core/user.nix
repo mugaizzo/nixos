@@ -16,6 +16,10 @@
     inherit system;
     config. allowUnfree = true;
   };
+  # polybarPinnedPkg = import inputs. polybarpkg {
+  #   inherit system;
+  #   config. allowUnfree = true;
+  # };
 in {
   imports = [inputs.home-manager.nixosModules.home-manager];
 
@@ -85,17 +89,18 @@ in {
       arandr
       blueman
       networkmanagerapplet
+      polybar
 
       picom
       dex
       xss-lock
-      polybar
       killall
       openvpn
       pwvucontrol
       oranchelo-icon-theme
       rustPinnedPkgs.rustdesk
       rustdeskServerPinnedPkgs.rustdesk-server
+      # polybarPinnedPkg.polybar
       zathura
       ripgrep
       texliveFull

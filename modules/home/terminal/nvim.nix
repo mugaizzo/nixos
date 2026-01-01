@@ -13,6 +13,7 @@
     inputs.nixvim.homeModules.nixvim
   ];
 
+
   config = lib.mkIf config.terminal.nvim.enable {
     home.packages = with pkgs; [
       alejandra
@@ -26,6 +27,7 @@
       python312Packages.pylatexenc
     ];
     programs.nixvim = {
+      enable = true;
       opts = {
         expandtab = true;
         tabstop = 2;
@@ -51,7 +53,7 @@
           enable = true;
           autoLoad = true;
           settings =
-            lib.nixvim.mkRaw
+    config.lib.nixvim.mkRaw
             #lua
             ''
               (function()

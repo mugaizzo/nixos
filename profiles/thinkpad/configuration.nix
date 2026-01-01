@@ -15,6 +15,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nix.settings = {
+  download-buffer-size = 524288000; # 500 MiB
+  };
+
+
+
   # Enable networking
   networking = {
     hostName = "nixos"; # Define your hostname.
