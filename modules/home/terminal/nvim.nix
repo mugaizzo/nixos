@@ -19,6 +19,7 @@
       alejandra
       statix
       nil
+      vimPlugins.catppuccin-nvim
       # Required for treesitter
       gcc
       # Required for telescope
