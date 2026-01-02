@@ -9,19 +9,23 @@
   };
 
   config = lib.mkIf config.terminal.zsh.enable {
-    # home.packages = with pkgs; [
-    #   imv
-    #   ripgrep
-    #   bat
-    #   bottom
-    #   atool
-    #   unzip
-    #   imagemagick
-    #   mpv
-    #   yt-dlp
-    #   tealdeer
-    #   bc
-    # ];
+    home.packages = with pkgs; [
+      # imv
+      ripgrep
+      bat
+      # bottom
+      # atool
+      unzip
+      imagemagick
+      # mpv
+      # yt-dlp
+      tealdeer
+      bc
+      fzf 
+      zoxide 
+      direnv
+      python313Packages.argcomplete
+    ];
 
     programs.zsh = {
       enable = true;
