@@ -37,7 +37,7 @@ in {
       nixpkgs.config.allowUnfree = true;
 
       imports = [
-        inputs.nixvim.homeManagerModules.default
+        inputs.nixvim.homeModules.default
         ./../home
       ];
 
