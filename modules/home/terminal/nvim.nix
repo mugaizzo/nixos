@@ -43,7 +43,7 @@
       };
       colorschemes.catppuccin = {
         enable = true;
-        #autoLoad = true;
+        autoLoad = true;
         settings = {
           flavour = "mocha";
         };
