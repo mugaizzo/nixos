@@ -15,18 +15,18 @@
 
 
   config = lib.mkIf config.terminal.nvim.enable {
-    home.packages = with pkgs; [
-      alejandra
-      statix
-      nil
-      vimPlugins.catppuccin-nvim
-      # Required for treesitter
-      gcc
-      # Required for telescope
-      fd
-      # Latex support for render-markdown
-      python312Packages.pylatexenc
-    ];
+    # home.packages = with pkgs; [
+    #   alejandra
+    #   statix
+    #   nil
+    #   vimPlugins.catppuccin-nvim
+    #   # Required for treesitter
+    #   gcc
+    #   # Required for telescope
+    #   fd
+    #   # Latex support for render-markdown
+    #   python312Packages.pylatexenc
+    # ];
     programs.nixvim = {
       enable = true;
       opts = {
@@ -54,7 +54,7 @@
           enable = true;
           autoLoad = true;
           settings =
-    config.lib.nixvim.mkRaw
+          config.lib.nixvim.mkRaw
             #lua
             ''
               (function()

@@ -158,6 +158,7 @@
     };
 
     terminal = {
+      zsh.enable = true;
       git.enable = true;
       lazygit.enable = true;
       nvim.enable = true;
