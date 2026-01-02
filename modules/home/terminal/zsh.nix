@@ -91,7 +91,7 @@
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 
-        eval "$(starship init zsh)"
+        # eval "$(starship init zsh)"
       '';
       plugins = [
         {
@@ -119,6 +119,15 @@
     # Starship prompt
     programs.starship = {
       enable = true;
+      enableZshIntegration = true;
+      settings = builtins.fromTOML (
+        builtins.readFile (
+          pkgs.fetchurl {
+            url = "https://starship.rs/presets/toml/bracketed-segments.toml";
+            sha256 = "01bhc5ncapg5l30a1s9jqv1ljz97fqg9zxk1195mjwh4cryz608m"; # Run nix-prefetch-url to get this
+          }
+        )
+      );
     };
   };
 }
