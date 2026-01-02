@@ -26,7 +26,6 @@
       zoxide
       direnv
       python313Packages.argcomplete
-      zsh-powerlevel10k
 
     ];
 
@@ -61,8 +60,6 @@
         ip = "ip -color=auto";
       };
       initContent = ''
-        # Powerlevel10k prompt
-        [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
         # Keybindings
         bindkey -e
@@ -92,12 +89,11 @@
         zstyle ':completion:*' menu no
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+
+        eval "$(starship init zsh)"
       '';
       plugins = [
-        {
-          name = "powerlevel10k";
-          src = pkgs.zsh-powerlevel10k;
-        }
         {
           name = "fzf-tab";
           src = pkgs.zsh-fzf-tab;
@@ -119,6 +115,10 @@
           "command-not-found"
         ];
       };
+    };
+    # Starship prompt
+    programs.starship = {
+      enable = true;
     };
   };
 }
