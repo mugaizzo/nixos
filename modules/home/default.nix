@@ -1,10 +1,10 @@
 _: {
   imports = [
     ./scripts
-#    ./games
-#    ./gui
-#    ./hyprland
-#    ./music
+    #    ./games
+    #    ./gui
+    #    ./hyprland
+    #    ./music
     ./terminal
     ./i3
     ./polybar
@@ -12,4 +12,3 @@ _: {
     ./picom
   ];
 }
-

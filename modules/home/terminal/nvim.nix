@@ -12,7 +12,6 @@
   #   inputs.nixvim.homeModules.nixvim
   # ];
 
-
   config = lib.mkIf config.terminal.nvim.enable {
     home.packages = with pkgs; [
       alejandra
@@ -53,7 +52,7 @@
           enable = true;
           autoLoad = true;
           settings =
-          config.lib.nixvim.mkRaw
+            config.lib.nixvim.mkRaw
             #lua
             ''
               (function()

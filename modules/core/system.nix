@@ -20,13 +20,13 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-#  system.autoUpgrade = {
-#    enable = true;
-#    flake = inputs.self.outPath;
-#    flags = ["-L"];
-#    dates = "02:00";
-#    randomizedDelaySec = "45m";
-#  };
+  #  system.autoUpgrade = {
+  #    enable = true;
+  #    flake = inputs.self.outPath;
+  #    flags = ["-L"];
+  #    dates = "02:00";
+  #    randomizedDelaySec = "45m";
+  #  };
 
   nix.optimise = {
     automatic = true;
@@ -41,4 +41,3 @@
 
   system.stateVersion = "25.05"; # Do not change
 }
-

@@ -10,5 +10,6 @@
   config = lib.mkIf config.terminal.lazygit.enable {
     programs.lazygit = {
       enable = true;
-};};
+    };
+  };
 }

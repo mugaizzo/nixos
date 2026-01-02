@@ -16,10 +16,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   nix.settings = {
-  download-buffer-size = 524288000; # 500 MiB
+    download-buffer-size = 524288000; # 500 MiB
   };
-
-
 
   # Enable networking
   networking = {
