@@ -53,7 +53,7 @@
         y = "yazi";
         ip = "ip -color=auto";
       };
-      initExtra = ''
+      initContent = ''
         # Powerlevel10k prompt
         [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
