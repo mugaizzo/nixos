@@ -28,7 +28,7 @@ in {
 
   home-manager = {
     useUserPackages = true;
-    useGlobalPkgs = true;
+    useGlobalPkgs = false;
     backupFileExtension = "backup";
     extraSpecialArgs = {inherit inputs username;};
 
