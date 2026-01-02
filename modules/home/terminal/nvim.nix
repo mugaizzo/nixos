@@ -2,16 +2,15 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }: {
   options = {
     terminal.nvim.enable = lib.mkEnableOption "enable nvim";
   };
 
-  imports = [
-    inputs.nixvim.homeModules.nixvim
-  ];
+  # imports = [
+  #   inputs.nixvim.homeModules.nixvim
+  # ];
 
 
   config = lib.mkIf config.terminal.nvim.enable {
