@@ -3,7 +3,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   options = {
     terminal.zsh.enable = lib.mkEnableOption "enable zsh";
   };
@@ -21,10 +22,12 @@
       # yt-dlp
       tealdeer
       bc
-      fzf 
-      zoxide 
+      fzf
+      zoxide
       direnv
       python313Packages.argcomplete
+      zsh-powerlevel10k
+
     ];
 
     programs.zsh = {
@@ -107,7 +110,14 @@
       ];
       oh-my-zsh = {
         enable = true;
-        plugins = ["git" "sudo" "aws" "kubectl" "kubectx" "command-not-found"];
+        plugins = [
+          "git"
+          "sudo"
+          "aws"
+          "kubectl"
+          "kubectx"
+          "command-not-found"
+        ];
       };
     };
   };
