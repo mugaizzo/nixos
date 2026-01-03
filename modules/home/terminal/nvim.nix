@@ -344,6 +344,10 @@
           action = "<cmd>w<CR>";
           key = "<leader>w";
         }
+        {
+          action = "<cmd>Yazi<CR>";
+          key = "<C-Up>";
+        }
       ];
       #   globals = {
       #     # clipboard = "osc52";
