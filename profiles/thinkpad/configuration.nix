@@ -54,8 +54,9 @@
   };
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
+    layout = "us,ara";
     variant = "";
+    options = "grp:alt_space_toggle";
   };
 
   # Enable CUPS to print documents.
