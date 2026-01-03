@@ -6,7 +6,8 @@
   #  pkgs,
   username,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -30,7 +31,11 @@
     networkmanager.enable = true;
     firewall = {
       enable = true; # Enabled by default
-      allowedTCPPorts = [53 853 443]; # Open web ports
+      allowedTCPPorts = [
+        53
+        853
+        443
+      ]; # Open web ports
       allowedUDPPortRanges = [
         # Open a range
         {
@@ -40,105 +45,116 @@
       ];
     };
   };
-
-  # Enable the X11 windowing system.
   services = {
-    xserver = {
-      enable = true;
-      windowManager.i3.enable = true;
-    };
     # Enable the GNOME Desktop Environment.
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    # services.xserver.desktopManager.plasma6.enable = true;
-  };
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us,ara";
-    variant = "";
-    options = "grp:alt_space_toggle";
-  };
+    xserver = {
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+      # Enable the X11 windowing system.
+
+      enable = true;
+      windowManager.i3.enable = true;
+
+      # services.xserver.desktopManager.plasma6.enable = true;
+
+      # Configure keymap in X11
+      xkb = {
+        layout = "us,ara";
+        options = "grp:alt_space_toggle";
+      };
+    };
+
+    # Enable CUPS to print documents.
+    printing.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+
+      # use the example session manager (no others are packaged yet so this is enabled by default,
+      # no need to redefine it in your config for now)
+      #media-session.enable = true;
+    };
+
+    # List packages installed in system profile. To search, run:
+    # $ nix search wget
+    #environment.systemPackages = with pkgs; [
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+    #];
+
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    # programs.mtr.enable = true;
+    # programs.gnupg.agent = {
+    #   enable = true;
+    #   enableSSHSupport = true;
+    # };
+
+    # List services that you want to enable:
+
+    # Enable the OpenSSH daemon.
+    openssh.enable = true;
+    openssh.settings.X11Forwarding = true;
+
+    blocky = {
+      enable = true;
+      settings = {
+        ports.dns = 53; # Port for incoming DNS Queries.
+        upstreams.groups.default = [
+          "https://one.one.one.one/dns-query" # Using Cloudflare's DNS over HTTPS server for resolving queries.
+        ];
+        # For initially solving DoH/DoT Requests when no system Resolver is available.
+        bootstrapDns = {
+          upstream = "https://one.one.one.one/dns-query";
+          ips = [
+            "1.1.1.1"
+            "1.0.0.1"
+          ];
+        };
+        #Enable blocking of certain domains.
+        blocking = {
+          blackLists = {
+            #Adblocking
+            ads = [ "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" ];
+            #Another filter for blocking adult sites
+            adult = [ "https://blocklistproject.github.io/Lists/porn.txt" ];
+            #You can add additional categories
+          };
+          #Configure what block categories are used
+          clientGroupsBlock = {
+            default = [
+              "ads"
+              "adult"
+            ];
+            kids-ipad = [
+              "ads"
+              "adult"
+            ];
+          };
+        };
+        caching = {
+          minTime = "5m";
+          maxTime = "30m";
+          prefetching = true;
+        };
+      };
+    };
+  };
 
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # install firefox.
   programs.firefox.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  #environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  #];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.openssh.settings.X11Forwarding = true;
-
-  services.blocky = {
-    enable = true;
-    settings = {
-      ports.dns = 53; # Port for incoming DNS Queries.
-      upstreams.groups.default = [
-        "https://one.one.one.one/dns-query" # Using Cloudflare's DNS over HTTPS server for resolving queries.
-      ];
-      # For initially solving DoH/DoT Requests when no system Resolver is available.
-      bootstrapDns = {
-        upstream = "https://one.one.one.one/dns-query";
-        ips = ["1.1.1.1" "1.0.0.1"];
-      };
-      #Enable blocking of certain domains.
-      blocking = {
-        blackLists = {
-          #Adblocking
-          ads = ["https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"];
-          #Another filter for blocking adult sites
-          adult = ["https://blocklistproject.github.io/Lists/porn.txt"];
-          #You can add additional categories
-        };
-        #Configure what block categories are used
-        clientGroupsBlock = {
-          default = ["ads" "adult"];
-          kids-ipad = ["ads" "adult"];
-        };
-      };
-      caching = {
-        minTime = "5m";
-        maxTime = "30m";
-        prefetching = true;
-      };
-    };
-  };
   programs = {
     zsh.enable = true;
     ssh.forwardX11 = true;
