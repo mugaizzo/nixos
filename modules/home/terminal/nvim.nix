@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options = {
     terminal.nvim.enable = lib.mkEnableOption "enable nvim";
   };
@@ -53,27 +54,27 @@
           autoLoad = true;
           settings =
             config.lib.nixvim.mkRaw
-            #lua
-            ''
-              (function()
-                      local startify = require('alpha.themes.startify')
+              #lua
+              ''
+                (function()
+                        local startify = require('alpha.themes.startify')
 
-                      -- Replace the header with your custom one
-                      startify.section. header.val = {
-                  "⠀⠀  ⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⢀⣠⣄⠀⠀⠀⠀⠀ ⠀⠀⠀",
-                  "⠀⠀⣤⣤⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                  "⠀⠀⣿⣿⠀ ⠀⣀⣀⡀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                  "⠀⠀⢸⣿⠀ ⣾⣿⣿⣿⣾⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠁⠀⠀⠀⣰⣶⡀⠀⠀⠀⠀",
-                  "⠀⠀⢸⣿⠀ ⠻⣿⣿⣿⣿⣿⣿⡿⠀⠀⠀⢰⣶⣶⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣶⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⣠⣶⣿⣿⠀⠸⣿⣿⣷⣶⣶⣿⣿⡿⠀⠀⠀⠀⠀",
-                  "⠀⠀⣠⣤⠀ ⠀⠙⢿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠻⢿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⣿⣿⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⠟⠉⠀⠀⠙⠻⠿⠿⠿⠟⣋⣀⣤⣄⡀⠀⠀",
-                  "⠀⠀⠈⠉⠀ ⠀⠀⠀⢻⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠻⠿⠿⠿⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⠿⠿⠃⠀⠀",
-                  "    ⠀⠀⠀                  ⠀⠀⢀⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠉⠀⠀⠀⠀⠀⠀",
-                  "      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-                      }
+                        -- Replace the header with your custom one
+                        startify.section. header.val = {
+                    "⠀⠀  ⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⢀⣠⣄⠀⠀⠀⠀⠀ ⠀⠀⠀",
+                    "⠀⠀⣤⣤⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+                    "⠀⠀⣿⣿⠀ ⠀⣀⣀⡀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+                    "⠀⠀⢸⣿⠀ ⣾⣿⣿⣿⣾⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠁⠀⠀⠀⣰⣶⡀⠀⠀⠀⠀",
+                    "⠀⠀⢸⣿⠀ ⠻⣿⣿⣿⣿⣿⣿⡿⠀⠀⠀⢰⣶⣶⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣶⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⣠⣶⣿⣿⠀⠸⣿⣿⣷⣶⣶⣿⣿⡿⠀⠀⠀⠀⠀",
+                    "⠀⠀⣠⣤⠀ ⠀⠙⢿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠻⢿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⣿⣿⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⠟⠉⠀⠀⠙⠻⠿⠿⠿⠟⣋⣀⣤⣄⡀⠀⠀",
+                    "⠀⠀⠈⠉⠀ ⠀⠀⠀⢻⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠻⠿⠿⠿⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⠿⠿⠃⠀⠀",
+                    "    ⠀⠀⠀                  ⠀⠀⢀⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠉⠀⠀⠀⠀⠀⠀",
+                    "      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+                        }
 
-                      return startify. config
-                    end)()
-            '';
+                        return startify. config
+                      end)()
+              '';
         };
 
         lualine = {
@@ -260,9 +261,9 @@
           enable = true;
           autoEnableSources = true;
           settings.sources = [
-            {name = "nvim_lsp";}
-            {name = "path";}
-            {name = "buffer";}
+            { name = "nvim_lsp"; }
+            { name = "path"; }
+            { name = "buffer"; }
           ];
         };
 
@@ -288,6 +289,119 @@
           autoLoad = true;
           settings = {
             open_for_directories = false;
+          };
+        };
+
+        copilot-chat = {
+          enable = true;
+          settings = {
+
+            answer_header = "## Copilot ";
+            question_header = "## User ";
+            error_header = "## Error ";
+            auto_follow_cursor = true;
+            model = "gpt-4.1";
+            highlight_selection = true;
+            selection = ''
+                          function(source)
+                local select = require('CopilotChat.select')
+                return select.visual(source) or select.line(source)
+              end
+            '';
+            separator = "───";
+            show_folds = true;
+            show_help = true;
+            system_prompt = "require('CopilotChat.prompts').COPILOT_INSTRUCTIONS";
+            temperatur = 0.1;
+            history_path = config.lib.nixvim.mkRaw "vim.fn.stdpath('data') .. '/copilotchat_history'";
+            mappings = {
+              accept_diff = {
+                insert = "<C-y>";
+                normal = "<C-y>";
+              };
+              close = {
+                insert = "<C-c>";
+                normal = "q";
+              };
+              complete = {
+                insert = "<Tab>";
+              };
+              jump_to_diff = {
+                normal = "gj";
+              };
+              quickfix_diffs = {
+                normal = "gq";
+              };
+              reset = {
+                insert = "<C-l>";
+                normal = "<C-l>";
+              };
+              show_context = {
+                normal = "gc";
+              };
+              show_diff = {
+                normal = "gd";
+              };
+              show_help = {
+                normal = "gh";
+              };
+              show_info = {
+                normal = "gi";
+              };
+              submit_prompt = {
+                insert = "<C-s>";
+                normal = "<CR>";
+              };
+              toggle_sticky = {
+                detail = "Makes line under cursor sticky or deletes sticky line.";
+                normal = "gr";
+              };
+              yank_diff = {
+                normal = "gy";
+                register = "\"";
+              };
+            };
+            prompts = {
+              Commit = {
+                prompt = "Write commit message for the change with commitizen convention. Make sure the title has maximum 50 characters and message is wrapped at 72 characters. Wrap the whole message in code block with language gitcommit.";
+                selection = "require('CopilotChat.select').gitdiff";
+              };
+              CommitStaged = {
+                prompt = "Write commit message for the change with commitizen convention. Make sure the title has maximum 50 characters and message is wrapped at 72 characters. Wrap the whole message in code block with language gitcommit.";
+                selection = ''
+                  function(source)
+                    return select.gitdiff(source, true)
+                  end
+                '';
+              };
+              Docs = {
+                prompt = "/COPILOT_GENERATE Please add documentation comment for the selection.";
+              };
+              Explain = {
+                prompt = "/COPILOT_EXPLAIN Write an explanation for the active selection as paragraphs of text.";
+              };
+              Fix = {
+                prompt = "/COPILOT_GENERATE There is a problem in this code. Rewrite the code to show it with the bug fixed.";
+              };
+              FixDiagnostic = {
+                prompt = "Please assist with the following diagnostic issue in file:";
+                selection = "require('CopilotChat.select').diagnostics";
+              };
+              Optimize = {
+                prompt = "/COPILOT_GENERATE Optimize the selected code to improve performance and readablilty.";
+              };
+              Review = {
+                callback = ''
+                  function(response, source)
+                    -- see config.lua for implementation
+                  end
+                '';
+                prompt = "/COPILOT_REVIEW Review the selected code.";
+              };
+              Tests = {
+                prompt = "/COPILOT_GENERATE Please generate tests for my code.";
+              };
+            };
           };
         };
 
