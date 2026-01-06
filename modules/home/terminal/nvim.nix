@@ -462,6 +462,10 @@
           action = "<cmd>Yazi<CR>";
           key = "<C-Up>";
         }
+        {
+          action = "<cmd>CopilotChatToggle<CR>";
+          key = "<leader>cc";
+        }
       ];
       #   globals = {
       #     # clipboard = "osc52";
