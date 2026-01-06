@@ -105,6 +105,7 @@ in {
       zathura
       ripgrep
       texliveFull
+      redshift
     ];
   };
 }
