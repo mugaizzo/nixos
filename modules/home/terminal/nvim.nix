@@ -40,6 +40,12 @@
       globals = {
         mapleader = " ";
       };
+
+      clipboard = {
+        providers.xclip.enable = true;
+        register = "unnamedplus";
+      };
+
       colorschemes.catppuccin = {
         enable = true;
         autoLoad = true;

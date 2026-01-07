@@ -106,6 +106,7 @@ in {
       ripgrep
       texliveFull
       redshift
+      xclip
     ];
   };
 }
