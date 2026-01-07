@@ -79,7 +79,7 @@ in {
       brightnessctl
       playerctl
       flameshot
-      i3lock
+      i3lock-fancy
       emote
       xbindkeys
       rofi
