@@ -16,6 +16,8 @@
   config = lib.mkIf config.terminal.nvim.enable {
     home.packages = with pkgs; [
       alejandra
+      lua54Packages.tiktoken_core
+      lynx
       statix
       nil
       # vimPlugins.catppuccin-nvim
