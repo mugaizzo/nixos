@@ -149,15 +149,19 @@
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # install firefox.
-  programs.firefox.enable = true;
   programs = {
+    # install firefox.
+    firefox.enable = true;
+
     zsh.enable = true;
     ssh.forwardX11 = true;
+
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+    };
 
     steam = {
       enable = true;
@@ -165,6 +169,7 @@
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
+
   };
 
   home-manager.users.${username} = {

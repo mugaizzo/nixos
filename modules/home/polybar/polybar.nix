@@ -22,7 +22,7 @@
       "bar/bottoml" = {
         monitor = "\${env:MONITOR:}";
         width = "100%";
-        height = "37pt";
+        height = "30pt";
         radius = 0;
         bottom = false;
 
