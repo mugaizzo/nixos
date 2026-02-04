@@ -115,6 +115,10 @@
           };
         };
 
+        abolish = {
+          enable = true;
+        };
+
         telescope = {
           enable = true;
           # autoLoad = true;
