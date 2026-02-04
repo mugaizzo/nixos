@@ -124,6 +124,7 @@
           # autoLoad = true;
           extensions = {
             fzf-native.enable = true;
+            live-grep-args.enable = true;
           };
           keymaps = {
             "<leader><leader>" = {
@@ -142,6 +143,12 @@
               action = "live_grep";
               options = {
                 desc = "Live grep [Telescope]";
+              };
+            };
+            "<leader>fG" = {
+              action = "live_grep_args";
+              options = {
+                desc = "Live grep args [Telescope]";
               };
             };
             "<leader>fb" = {
