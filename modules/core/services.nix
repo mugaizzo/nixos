@@ -1,11 +1,15 @@
-{username, ...}: {
+{ username, ... }:
+{
   # Automount usb drives
   # systemd.tmpfiles.rules = [
   #   "d /run/media/${username} 0755 ${username} ${username} -"
   # ];
 
   services = {
-    # libinput.enable = true; # Mouse
+    libinput = {
+      enable = true;
+      touchpad.naturalScrolling = true;
+    }; # Mouse
     # fstrim.enable = true; # Trim SSD
     # udisks2.enable = true; # Mount usb drives
     # gvfs.enable = true; # Mount usb drives
@@ -22,7 +26,7 @@
       enable = true;
       signal = {
         enable = true;
-        relayHosts = ["192.168.1.61"];
+        relayHosts = [ "192.168.1.61" ];
         #        extraArgs = ["-k" "/home/mugahed/.ssh/id_ed25519_rustdesk"];
       };
       relay = {
