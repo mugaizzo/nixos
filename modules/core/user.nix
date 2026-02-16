@@ -107,6 +107,7 @@ in {
       texliveFull
       redshift
       xclip
+      syncthing
     ];
   };
 }
