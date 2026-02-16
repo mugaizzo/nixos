@@ -108,6 +108,7 @@ in {
       redshift
       xclip
       syncthing
+      obsidian
     ];
   };
 }
