@@ -54,6 +54,8 @@
   services = {
     # Enable the GNOME Desktop Environment.
     displayManager.gdm.enable = true;
+    displayManager.sessionPackages = with pkgs; [ sway ];
+
     desktopManager.gnome.enable = true;
     xserver = {
 
