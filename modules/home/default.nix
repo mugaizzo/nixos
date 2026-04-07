@@ -10,5 +10,6 @@ _: {
     ./polybar
     ./rofi
     ./picom
+    ./sway
   ];
 }
