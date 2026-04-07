@@ -170,6 +170,7 @@
           "5:󰊴" = [ { class = "steam"; } ];
         };
 
+        startup = [ { command = "noctalia-shell"; } ];
         # Colors
         colors = {
           focused = {
