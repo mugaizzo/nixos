@@ -109,6 +109,8 @@ in {
       xclip
       syncthing
       obsidian
+      zotero
+      wdisplays
     ];
   };
 }
