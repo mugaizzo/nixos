@@ -11,8 +11,9 @@
   };
 
   config = lib.mkIf config.sway.enable {
-    home.packages = [
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    home.packages = with pkgs; [
+      # inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+      noctalia-shell
     ];
     wayland.windowManager.sway = {
       enable = true;
