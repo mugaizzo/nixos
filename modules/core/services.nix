@@ -21,7 +21,7 @@
     # jitterentropy-rngd.enable = true; # Better entropy
 
     logind.settings.Login.HandleLidSwitch = "ignore"; # Ignore when the lid is closed -> Hypridle etc. handles suspending
-
+    power-profiles-daemon.enable = true;
     rustdesk-server = {
       enable = true;
       signal = {

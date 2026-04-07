@@ -4,24 +4,28 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options = {
     sway.enable = lib.mkEnableOption "enable sway";
   };
 
   config = lib.mkIf config.sway.enable {
+    home.packages = [
+      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
     wayland.windowManager.sway = {
       enable = true;
-      wrapperFeatures.gtk = true; 
+      wrapperFeatures.gtk = true;
       config = rec {
         modifier = "Mod4";
 
-        bars = [];
+        bars = [ ];
         defaultWorkspace = "1";
 
         # Fonts configuration
         fonts = {
-          names = ["Noto Kufi Arabic"];
+          names = [ "Noto Kufi Arabic" ];
           size = 9.0;
         };
 
@@ -42,7 +46,7 @@
         focus.followMouse = true;
 
         # Workspace naming
-        workspaceOutputAssign = [];
+        workspaceOutputAssign = [ ];
 
         # Custom keybindings
         keybindings = {
@@ -155,11 +159,14 @@
 
         # Window assignments
         assigns = {
-          "1:" = [{class = "firefox";}];
-          "2:" = [{class = "Code";}];
-          "3:󰇮" = [{class = "thunderbird";}];
-          "4:󰵅" = [{class = "Slack";} {class = "discord";}];
-          "5:󰊴" = [{class = "steam";}];
+          "1:" = [ { class = "firefox"; } ];
+          "2:" = [ { class = "Code"; } ];
+          "3:󰇮" = [ { class = "thunderbird"; } ];
+          "4:󰵅" = [
+            { class = "Slack"; }
+            { class = "discord"; }
+          ];
+          "5:󰊴" = [ { class = "steam"; } ];
         };
 
         # Colors
