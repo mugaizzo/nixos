@@ -19,6 +19,12 @@
       enable = true;
       wrapperFeatures.gtk = true;
       config = rec {
+        input = {
+          "type:touchpad" = {
+            natural_scroll = "enable";
+          };
+        };
+
         modifier = "Mod4";
 
         bars = [ ];
