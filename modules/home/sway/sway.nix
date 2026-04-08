@@ -22,6 +22,7 @@
         input = {
           "type:touchpad" = {
             natural_scroll = "enable";
+            click_method = "clickfinger";
           };
         };
 
