@@ -3,7 +3,8 @@
   inputs,
   username,
   ...
-}: let
+}:
+let
   inherit (pkgs.stdenv.hostPlatform) system;
 
   # Import the pinned nixpkgs with allowUnfree config
@@ -12,16 +13,17 @@
     config.allowUnfree = true;
   };
 
-  rustdeskServerPinnedPkgs = import inputs. rustdeskServerpkg {
+  rustdeskServerPinnedPkgs = import inputs.rustdeskServerpkg {
     inherit system;
-    config. allowUnfree = true;
+    config.allowUnfree = true;
   };
   # polybarPinnedPkg = import inputs. polybarpkg {
   #   inherit system;
   #   config. allowUnfree = true;
   # };
-in {
-  imports = [inputs.home-manager.nixosModules.home-manager];
+in
+{
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -30,7 +32,7 @@ in {
     useUserPackages = true;
     useGlobalPkgs = false;
     backupFileExtension = "backup";
-    extraSpecialArgs = {inherit inputs username;};
+    extraSpecialArgs = { inherit inputs username; };
 
     users.${username} = {
       # Allow unfree packages across the entire system
@@ -58,7 +60,10 @@ in {
     isNormalUser = true;
     hashedPassword = "$6$JqPRec7d2TA8bzEr$hkeQvoM0qEdUPU4chLV5b.nDvTHk6ndJlib9DeFssVc.i3jnCDnoL6hSZ/z6sIuNRRinK/S6CFE1cWaD2BS/U.";
     description = "mugahed";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       #  thunderbird
@@ -113,6 +118,7 @@ in {
       # sway specific packages
       wdisplays
       cliphist
+      wl-clipboard
     ];
   };
 }
