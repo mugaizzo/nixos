@@ -110,7 +110,9 @@ in {
       syncthing
       obsidian
       zotero
+      # sway specific packages
       wdisplays
+      cliphist
     ];
   };
 }

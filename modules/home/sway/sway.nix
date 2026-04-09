@@ -147,6 +147,7 @@
 
           "${modifier}+g" = "move workspace to output right";
           "${modifier}+o" = "exec --no-startup-id flameshot gui";
+          "${modifier}+p" = "exec noctalia-shell ipc call plugin:translator toggle \"ar\" \"\"";
           "${modifier}+b" = "exec --no-startup-id firefox";
           "${modifier}+Tab" = "exec --no-startup-id wallpaper-changer";
         };
