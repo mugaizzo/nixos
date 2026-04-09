@@ -44,10 +44,10 @@
       pulse.enable = true;
     };
 
-    syncthing = {
-      enable = true;
-      openDefaultPorts = true;
-      configDir = "/home/mugahed/.local/state/syncthing";
-    };
+    # syncthing = {
+    #   enable = true;
+    #   openDefaultPorts = true;
+    #   configDir = "/home/mugahed/.local/state/syncthing";
+    # };
   };
 }

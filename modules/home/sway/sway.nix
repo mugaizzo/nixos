@@ -180,7 +180,17 @@
           "5:󰊴" = [ { class = "steam"; } ];
         };
 
-        startup = [ { command = "noctalia-shell"; } ];
+        startup = [
+          { command = "noctalia-shell"; }
+          {
+            command = "wl-paste --type text --watch cliphist store";
+            always = true;
+          }
+          {
+            command = "wl-paste --type image --watch cliphist store";
+            always = true;
+          }
+        ];
         # Colors
         colors = {
           focused = {
