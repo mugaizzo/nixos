@@ -47,6 +47,7 @@
     syncthing = {
       enable = true;
       openDefaultPorts = true;
+      configDir = "/home/mugahed/.local/state/syncthing";
     };
   };
 }
