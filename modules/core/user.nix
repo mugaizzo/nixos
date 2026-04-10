@@ -66,9 +66,9 @@ in
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
+      # General packages
       #  thunderbird
       firefox
-
       btop
       vscode
       git
@@ -80,41 +80,41 @@ in
       slack
       kdePackages.konsole
       zoom-us
-
       brightnessctl
       playerctl
-      flameshot
-      i3lock-fancy
       emote
-      xbindkeys
       rofi
-      jq
-      feh
-      autorandr
       bc
-      arandr
       blueman
       networkmanagerapplet
-      polybar
-
-      picom
       dex
-      xss-lock
       killall
       openvpn
       pwvucontrol
       oranchelo-icon-theme
       rustPinnedPkgs.rustdesk
       rustdeskServerPinnedPkgs.rustdesk-server
-      # polybarPinnedPkg.polybar
       zathura
       ripgrep
       texliveFull
-      redshift
-      xclip
       syncthing
       obsidian
       zotero
+
+      # i3
+      flameshot
+      i3lock-fancy
+      xbindkeys
+      jq
+      feh
+      autorandr
+      arandr
+      polybar
+      picom
+      xss-lock
+      redshift
+      xclip
+
       # sway specific packages
       wdisplays
       cliphist
