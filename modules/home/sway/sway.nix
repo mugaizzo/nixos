@@ -101,7 +101,7 @@
           "${modifier}+w" = "layout tabbed";
           "${modifier}+e" = "layout toggle split";
           "${modifier}+Shift+space" = "floating toggle";
-          "${modifier}+Shift+x" = "noctalia-shell ipc call lockScreen lock";
+          "${modifier}+Shift+x" = "exec noctalia-shell ipc call lockScreen lock";
           "${modifier}+space" = "focus mode_toggle";
           "${modifier}+a" = "focus parent";
 
