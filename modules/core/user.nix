@@ -103,6 +103,7 @@ in
       syncthing
       obsidian
       zotero
+      discord
 
       # i3
       flameshot
