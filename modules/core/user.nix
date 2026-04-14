@@ -122,6 +122,7 @@ in
       wdisplays
       cliphist
       wl-clipboard
+      sov
     ];
   };
 }

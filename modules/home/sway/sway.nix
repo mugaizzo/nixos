@@ -150,7 +150,7 @@
           "${modifier}+o" = "exec --no-startup-id flameshot gui";
           "${modifier}+p" = "exec noctalia-shell ipc call plugin:translator toggle \"ar\" \"\"";
           "${modifier}+b" = "exec --no-startup-id firefox";
-          "${modifier}+Tab" = "exec --no-startup-id wallpaper-changer";
+          "${modifier}+Tab" = "exec pkill -USR1 sov";
         };
 
         # Resize mode definition
@@ -183,6 +183,7 @@
 
         startup = [
           { command = "noctalia-shell"; }
+          { command = "sov"; }
           {
             command = "wl-paste --type text --watch cliphist store";
             always = true;
