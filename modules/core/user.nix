@@ -8,15 +8,16 @@ let
   inherit (pkgs.stdenv.hostPlatform) system;
 
   # Import the pinned nixpkgs with allowUnfree config
-  rustPinnedPkgs = import inputs.rustpkg {
-    inherit system;
-    config.allowUnfree = true;
-  };
+  # rustPinnedPkgs = import inputs.rustpkg {
+  #   inherit system;
+  #   config.allowUnfree = true;
+  # };
 
-  rustdeskServerPinnedPkgs = import inputs.rustdeskServerpkg {
-    inherit system;
-    config.allowUnfree = true;
-  };
+  # rustdeskServerPinnedPkgs = import inputs.rustdeskServerpkg {
+  #   inherit system;
+  #   config.allowUnfree = true;
+  # };
+
   # polybarPinnedPkg = import inputs. polybarpkg {
   #   inherit system;
   #   config. allowUnfree = true;
@@ -92,8 +93,10 @@ in
       openvpn
       pwvucontrol
       oranchelo-icon-theme
-      rustPinnedPkgs.rustdesk
-      rustdeskServerPinnedPkgs.rustdesk-server
+      # rustPinnedPkgs.rustdesk
+      # rustdeskServerPinnedPkgs.rustdesk-server
+      rustdesk
+      rustdesk-server
       zathura
       ripgrep
       texliveFull
