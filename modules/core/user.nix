@@ -71,7 +71,7 @@ in
       #  thunderbird
       firefox
       btop
-      vscode
+      # vscode
       git
       wget
       tree
@@ -104,6 +104,7 @@ in
       obsidian
       zotero
       discord
+      opencode
 
       # i3
       flameshot

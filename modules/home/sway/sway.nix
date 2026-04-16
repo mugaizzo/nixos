@@ -61,13 +61,14 @@
         # Custom keybindings
         keybindings = {
           # Launch terminal
-          "${modifier}+Return" = "exec --no-startup-id konsole";
+          "${modifier}+Return" = "exec  konsole";
 
           # Kill focused window
           "${modifier}+q" = "kill";
 
           # Launch app launcher
-          "${modifier}+d" = "exec --no-startup-id rofi -show run";
+          "${modifier}+d" = "exec rofi -show run";
+          "${modifier}+c" = "exec rofi -show window";
 
           # Focus window
           "${modifier}+j" = "focus left";
@@ -134,10 +135,10 @@
           "${modifier}+r" = "mode resize";
 
           # Media keys
-          "XF86AudioRaiseVolume" = "exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%+";
-          "XF86AudioLowerVolume" = "exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%-";
-          "XF86AudioMute" = "exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle";
-          "XF86AudioMicMute" = "exec --no-startup-id wpctl set-mute @DEFAULT_SOURCE@ toggle";
+          "XF86AudioRaiseVolume" = "exec  wpctl set-volume @DEFAULT_SINK@ 10%+";
+          "XF86AudioLowerVolume" = "exec  wpctl set-volume @DEFAULT_SINK@ 10%-";
+          "XF86AudioMute" = "exec  wpctl set-mute @DEFAULT_SINK@ toggle";
+          "XF86AudioMicMute" = "exec  wpctl set-mute @DEFAULT_SOURCE@ toggle";
           "XF86AudioPlay" = "exec playerctl play-pause";
           "XF86AudioNext" = "exec playerctl next";
           "XF86AudioPrev" = "exec playerctl previous";
@@ -147,9 +148,9 @@
           "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
 
           "${modifier}+g" = "move workspace to output right";
-          "${modifier}+o" = "exec --no-startup-id flameshot gui";
+          "${modifier}+o" = "exec  flameshot gui";
           "${modifier}+p" = "exec noctalia-shell ipc call plugin:translator toggle \"ar\" \"\"";
-          "${modifier}+b" = "exec --no-startup-id firefox";
+          "${modifier}+b" = "exec  firefox";
           "${modifier}+Tab" = "exec pkill -USR1 sov";
         };
 
