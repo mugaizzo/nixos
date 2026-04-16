@@ -125,6 +125,7 @@ in
       cliphist
       wl-clipboard
       sov
+      input-remapper
     ];
   };
 }
