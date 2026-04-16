@@ -58,7 +58,6 @@
         wttr = "curl wttr.in/40.76802547849189,-111.85571559297684";
         y = "yazi";
         lg = "lazygit";
-        ust = "update-system thinkpad";
         ip = "ip -color=auto";
       };
       initContent = ''

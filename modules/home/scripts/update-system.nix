@@ -1,5 +1,5 @@
 {pkgs, ...}:
-pkgs.writeShellScriptBin "update-system" ''
+pkgs.writeShellScriptBin "us" ''
   set -e
 
   PROFILE="$1"
