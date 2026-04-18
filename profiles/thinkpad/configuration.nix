@@ -56,7 +56,7 @@
     displayManager.gdm.enable = true;
     displayManager.sessionPackages = with pkgs; [ sway ];
 
-    desktopManager.gnome.enable = true;
+    # desktopManager.gnome.enable = true;
     xserver = {
 
       # Enable the X11 windowing system.
