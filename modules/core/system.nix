@@ -1,5 +1,14 @@
 { inputs, ... }:
 {
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/home/mugahed/.config/sops/age/keys.txt";
+    secrets = {
+      "user-password" = {};
+      "rustdesk-relay" = {};
+    };
+  };
   nix.settings = {
     auto-optimise-store = true;
     experimental-features = [

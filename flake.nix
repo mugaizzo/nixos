@@ -20,6 +20,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # noctalia = {
     #   url = "github:noctalia-dev/noctalia-shell";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -46,6 +50,7 @@
         };
         modules = [
           ./profiles/thinkpad
+          inputs.sops-nix.nixosModules.sops
         ];
       };
     };

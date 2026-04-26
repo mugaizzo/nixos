@@ -59,7 +59,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
-    hashedPassword = "$6$JqPRec7d2TA8bzEr$hkeQvoM0qEdUPU4chLV5b.nDvTHk6ndJlib9DeFssVc.i3jnCDnoL6hSZ/z6sIuNRRinK/S6CFE1cWaD2BS/U.";
+    hashedPasswordFile = "/run/secrets/user-password";
     description = "mugahed";
     extraGroups = [
       "networkmanager"
