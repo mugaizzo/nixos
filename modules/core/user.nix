@@ -105,6 +105,8 @@ in
       zotero
       discord
       opencode
+      claude-code
+      pywalfox-native
 
       # i3
       flameshot
