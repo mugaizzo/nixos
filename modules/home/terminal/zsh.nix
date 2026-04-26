@@ -125,7 +125,7 @@
         builtins.readFile (
           pkgs.fetchurl {
             url = "https://starship.rs/presets/toml/bracketed-segments.toml";
-            sha256 = "01bhc5ncapg5l30a1s9jqv1ljz97fqg9zxk1195mjwh4cryz608m"; # Run nix-prefetch-url to get this
+            sha256 = "01yd5zf1dzipipvfdzvg3s2akw96q6nlkzb87k0pr7bk5rw7sahw"; # Run nix-prefetch-url to get this
           }
         )
       );

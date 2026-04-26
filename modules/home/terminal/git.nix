@@ -16,9 +16,6 @@
           name = "mugaizzo";
           email = "mugahedman@hotmail.com";
         };
-        extraConfig = {
-          credential.helper = "store --file ~/.ssh/config";
-        };
       };
     };
   };

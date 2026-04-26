@@ -3,7 +3,7 @@ _: {
     ./git.nix
     ./lazygit.nix
     ./nvim.nix
-    ./ghostty.nix
+    #    ./ghostty.nix
     ./zsh.nix
   ];
 }

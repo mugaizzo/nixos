@@ -9,7 +9,13 @@ pkgs.writeShellScriptBin "rofi-power" ''
   "Suspend") systemctl suspend ;;
   "Reboot") reboot ;;
   "Poweroff") poweroff ;;
-  "Log Out") i3-msg exit;;
+  "Log Out")
+    if [ -n "$WAYLAND_DISPLAY" ]; then
+      swaymsg exit
+    else
+      i3-msg exit
+    fi
+    ;;
   *) exit 1 ;;
   esac
 ''

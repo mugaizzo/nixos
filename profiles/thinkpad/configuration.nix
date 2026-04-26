@@ -40,7 +40,6 @@
       allowedTCPPorts = [
         53
         853
-        443
       ]; # Open web ports
       allowedUDPPortRanges = [
         # Open a range
@@ -110,6 +109,9 @@
     openssh.settings.X11Forwarding = true;
 
   };
+
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;
