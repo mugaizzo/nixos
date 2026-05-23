@@ -53,10 +53,8 @@
   };
 
   # Fingerprint-first with password fallback for all PAM services.
-  # Applied on the `login` service which sddm, sudo, and polkit all delegate to.
-  # pam_fprintd: sufficient — success = authenticated, no-finger-enrolled or timeout = try next
-  # pam_unix:    sufficient — success = authenticated, fail = try next
-  # pam_deny:    required  — rejects if both above failed
+  # Applied on the `login` service which sudo, polkit, etc. delegate to.
+  # GDM handles its own fingerprint UI natively via gdm-fingerprint PAM service.
   security.pam.services.login.rules.auth = {
     fprintd = {
       order = 10;
@@ -70,8 +68,4 @@
     };
     deny.order = lib.mkForce 30;
   };
-
-  # SDDM: use same auth as login (inherits the rule above via substack).
-  # Remove any per-service override so sddm just delegates to login.
-  security.pam.services.sddm.fprintAuth = false;
 }

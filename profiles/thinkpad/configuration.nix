@@ -51,9 +51,10 @@
     };
   };
   services = {
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
-    displayManager.sddm.wayland.compositor = "weston";
+    greetd = {
+      enable = true;
+      settings.default_session.user = "greeter";
+    };
     displayManager.sessionPackages = with pkgs; [ sway ];
 
     # desktopManager.gnome.enable = true;
@@ -121,6 +122,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   programs = {
+    regreet.enable = true;
+
     # install firefox.
     firefox.enable = true;
 
