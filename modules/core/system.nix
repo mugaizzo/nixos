@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
@@ -55,4 +55,8 @@
   };
 
   system.stateVersion = "25.05"; # Do not change
+
+  environment.systemPackages = with pkgs; [
+    usbutils
+  ];
 }
