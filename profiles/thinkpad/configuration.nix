@@ -51,15 +51,8 @@
     };
   };
   services = {
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --sessions /run/current-system/sw/share/wayland-sessions:/run/current-system/sw/share/xsessions";
-          user = "greeter";
-        };
-      };
-    };
+    displayManager.sddm.enable = true;
+    displayManager.sddm.wayland.enable = true;
     displayManager.sessionPackages = with pkgs; [ sway ];
 
     # desktopManager.gnome.enable = true;

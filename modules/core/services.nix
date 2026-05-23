@@ -51,4 +51,9 @@
     #   configDir = "/home/mugahed/.local/state/syncthing";
     # };
   };
+
+  # Disable fingerprint auth for the display manager and TTY login — password only there.
+  # Fingerprint still works for sudo/polkit where it's more convenient.
+  security.pam.services.sddm.fprintAuth = false;
+  security.pam.services.login.fprintAuth = false;
 }
