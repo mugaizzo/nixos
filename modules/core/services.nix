@@ -1,4 +1,4 @@
-{ username, ... }:
+{ username, pkgs, ... }:
 {
   # Automount usb drives
   # systemd.tmpfiles.rules = [
@@ -52,8 +52,27 @@
     # };
   };
 
-  # Disable fingerprint auth for the display manager and TTY login — password only there.
-  # Fingerprint still works for sudo/polkit where it's more convenient.
-  security.pam.services.sddm.fprintAuth = false;
+  # Disable fingerprint on the login PAM service (used by TTY login).
   security.pam.services.login.fprintAuth = false;
+
+  # For SDDM: try fingerprint first, fall back to password.
+  # pam_fprintd is inserted as sufficient; if it fails/times out pam_unix catches it.
+  security.pam.services.sddm.rules.auth = {
+    fprintd = {
+      order = 10;
+      control = "sufficient";
+      modulePath = "${pkgs.fprintd}/lib/security/pam_fprintd.so";
+    };
+    unix = {
+      order = 20;
+      control = "sufficient";
+      modulePath = "pam_unix.so";
+      args = [ "likeauth" "nullok" "try_first_pass" ];
+    };
+    deny = {
+      order = 30;
+      control = "required";
+      modulePath = "pam_deny.so";
+    };
+  };
 }
