@@ -1,4 +1,4 @@
-{ username, pkgs, ... }:
+{ username, pkgs, lib, ... }:
 {
   # Automount usb drives
   # systemd.tmpfiles.rules = [
@@ -52,12 +52,12 @@
     # };
   };
 
-  # Disable fingerprint on the login PAM service (used by TTY login).
-  security.pam.services.login.fprintAuth = false;
-
-  # For SDDM: try fingerprint first, fall back to password.
-  # pam_fprintd is inserted as sufficient; if it fails/times out pam_unix catches it.
-  security.pam.services.sddm.rules.auth = {
+  # Fingerprint-first with password fallback for all PAM services.
+  # Applied on the `login` service which sddm, sudo, and polkit all delegate to.
+  # pam_fprintd: sufficient — success = authenticated, no-finger-enrolled or timeout = try next
+  # pam_unix:    sufficient — success = authenticated, fail = try next
+  # pam_deny:    required  — rejects if both above failed
+  security.pam.services.login.rules.auth = {
     fprintd = {
       order = 10;
       control = "sufficient";
@@ -65,14 +65,13 @@
     };
     unix = {
       order = 20;
-      control = "sufficient";
-      modulePath = "pam_unix.so";
-      args = [ "likeauth" "nullok" "try_first_pass" ];
+      control = lib.mkForce "sufficient";
+      args = lib.mkForce [ "likeauth" "nullok" "try_first_pass" ];
     };
-    deny = {
-      order = 30;
-      control = "required";
-      modulePath = "pam_deny.so";
-    };
+    deny.order = lib.mkForce 30;
   };
+
+  # SDDM: use same auth as login (inherits the rule above via substack).
+  # Remove any per-service override so sddm just delegates to login.
+  security.pam.services.sddm.fprintAuth = false;
 }

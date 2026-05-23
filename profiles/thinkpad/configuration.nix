@@ -53,6 +53,7 @@
   services = {
     displayManager.sddm.enable = true;
     displayManager.sddm.wayland.enable = true;
+    displayManager.sddm.wayland.compositor = "weston";
     displayManager.sessionPackages = with pkgs; [ sway ];
 
     # desktopManager.gnome.enable = true;
