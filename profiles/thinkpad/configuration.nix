@@ -122,7 +122,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   programs = {
-    regreet.enable = true;
+    regreet = {
+      enable = true;
+      theme.name = "Adwaita-dark";
+    };
 
     # install firefox.
     firefox.enable = true;
