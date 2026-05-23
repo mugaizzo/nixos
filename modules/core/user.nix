@@ -95,7 +95,7 @@ in
       oranchelo-icon-theme
       # rustPinnedPkgs.rustdesk
       # rustdeskServerPinnedPkgs.rustdesk-server
-      rustdesk
+      # rustdesk  # broken: vendor hash mismatch in nixpkgs rustdesk-1.4.6
       rustdesk-server
       zathura
       ripgrep
