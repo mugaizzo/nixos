@@ -70,7 +70,7 @@
       # Configure keymap in X11
       xkb = {
         layout = "us,ara";
-        options = "grp:alt_space_toggle";
+        options = "grp:alt_shift_toggle";
       };
     };
 

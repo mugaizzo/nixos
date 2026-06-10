@@ -26,6 +26,10 @@
             drag_lock = "disable";
             click_method = "clickfinger";
           };
+          "type:keyboard" = {
+            xkb_layout = "us,ara";
+            xkb_options = "grp:alt_shift_toggle";
+          };
         };
 
         modifier = "Mod4";
