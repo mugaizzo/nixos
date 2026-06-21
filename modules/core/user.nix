@@ -77,7 +77,8 @@ in
       tree
       yazi
       lazygit
-      racket
+      # racket
+      nautilus
       slack
       kdePackages.konsole
       zoom-us
