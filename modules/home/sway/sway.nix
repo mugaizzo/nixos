@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   lib,
   config,
@@ -12,8 +11,7 @@
 
   config = lib.mkIf config.sway.enable {
     home.packages = with pkgs; [
-      # inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-      noctalia-shell
+      noctalia
     ];
     wayland.windowManager.sway = {
       enable = true;
@@ -106,7 +104,7 @@
           "${modifier}+w" = "layout tabbed";
           "${modifier}+e" = "layout toggle split";
           "${modifier}+Shift+space" = "floating toggle";
-          "${modifier}+Shift+x" = "exec noctalia-shell ipc call lockScreen lock";
+          "${modifier}+Shift+x" = "exec noctalia msg session lock";
           "${modifier}+space" = "focus mode_toggle";
           "${modifier}+a" = "focus parent";
 
@@ -153,7 +151,7 @@
 
           "${modifier}+g" = "move workspace to output right";
           "${modifier}+o" = "exec  flameshot gui";
-          "${modifier}+p" = "exec noctalia-shell ipc call plugin:translator toggle \"ar\" \"\"";
+          "${modifier}+p" = "exec noctalia msg panel-toggle launcher \"/tr ar \"";
           "${modifier}+b" = "exec  firefox";
           "${modifier}+Tab" = "exec pkill -USR1 sov";
         };
@@ -187,7 +185,7 @@
         };
 
         startup = [
-          { command = "noctalia-shell"; }
+          { command = "noctalia"; }
           { command = "sov"; }
           {
             command = "wl-paste --type text --watch cliphist store";

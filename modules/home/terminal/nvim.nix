@@ -30,6 +30,7 @@
     ];
     programs.nixvim = {
       enable = true;
+      nixpkgs.config.allowUnfree = true;
       opts = {
         expandtab = true;
         tabstop = 2;

@@ -28,6 +28,10 @@ in
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  # Zotero still requires this EOL runtime; remove when its dependency is updated.
+  nixpkgs.config.permittedInsecurePackages = [
+    "firefox-esr-140-bin-unwrapped-140.17.0esr"
+  ];
 
   home-manager = {
     useUserPackages = true;

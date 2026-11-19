@@ -55,8 +55,13 @@
       enable = true;
       settings.default_session.user = "greeter";
     };
-    displayManager.sessionPackages = with pkgs; [ sway ];
-
+    displayManager = {
+      sessionPackages = with pkgs; [ sway ];
+      regreet = {
+        enable = true;
+        theme.name = "Adwaita-dark";
+      };
+    };
     # desktopManager.gnome.enable = true;
     xserver = {
 
@@ -122,17 +127,12 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   programs = {
-    regreet = {
-      enable = true;
-      theme.name = "Adwaita-dark";
-    };
 
     # install firefox.
     firefox.enable = true;
 
     zsh.enable = true;
     ssh.forwardX11 = true;
-
 
     steam = {
       enable = true;
@@ -147,7 +147,7 @@
     i3 = {
       enable = true;
     };
-    
+
     sway = {
       enable = true;
     };
